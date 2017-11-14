@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Marginal Likelihood</title>
+
+    <link href='css/nouislider.min.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
+
+</head>
+
+<body>
+<div class='container'>
+
+<!-- Sample Size Slider -->
+  <div class='row'>
+    <div class='col-md-2'>Sample Size</div>
+    <div id='n_slider' class='col-md-8'></div>
+    <input class='col-md-2' id='n_input' type='number'>
+  </div>
+
+<!-- Proportion Slider -->
+  <div class='row'>
+    <div class='col-md-2'>Proportion</div>
+    <div id='p_slider' class='col-md-8'></div>
+    <input id='p_input' class='col-md-2' type='number' min'0' max'1' step='.01'>
+  </div>
+
+  <div class='row'>
+<!-- Left Chart -->
+    <div class='col-md-5'>
+      <div class='chart-cont'>
+      <div class='row chart'>
+        <canvas id='chart1'></canvas>
+      </div>
+      <div class='row'>
+        <div class='col-md-1'>&alpha;:</div>
+        <div id='a1_slider' class='col-md-8'></div>
+        <input id='a1_input' class='col-md-3' type='number'>
+      </div>
+      <div class='row'>
+        <div class='col-md-1'>&beta;:</div>
+        <div id='b1_slider' class='col-md-8'></div>
+        <input id='b1_input' class='col-md-3' type='number'>
+      </div>
+      </div>
+    </div>
+
+<!-- Bar Chart -->
+    <div class='col-md-2'>
+      <div class='chart-cont'>
+      <div class='row chart'>
+        <canvas id='barchart'></canvas>
+      </div>
+      </div>
+    </div>
+
+<!-- Right Chart -->
+    <div class='col-md-5'>
+      <div class='chart-cont'>
+      <div class='row chart'>
+        <canvas id='chart2'></canvas>
+      </div>
+      <div class='row'>
+        <div class='col-md-1'>&alpha;:</div>
+        <div id='a2_slider' class='col-md-8'></div>
+        <input id='a2_input' class='col-md-3' type='number'>
+      </div>
+      <div class='row'>
+        <div class='col-md-1'>&beta;:</div>
+        <div id='b2_slider' class='col-md-8'></div>
+        <input id='b2_input' class='col-md-3' type='number'>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
+<script src='js/nouislider.min.js'></script>
+<script src='js/jstat.js'></script>
+<script src='js/marginal.js'></script>
+
+</body>
+</html>
