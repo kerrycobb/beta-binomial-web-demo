@@ -1,12 +1,10 @@
-.chart {
-    height: 50vh;
-    /*border:1px solid black;
-    margin: 0px;
-    padding: 0px;*/
+input {
+    box-sizing: border-box;
+    min-width: 100%;
+    max-width: 100%;
 }
 
-/*.chart-cont {
-    border:1px solid black;
-    margin: 0px;
-    padding: 0px;
-}*/
+.chart {
+    height: 50vh;
+}
+]
