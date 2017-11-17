@@ -4,7 +4,10 @@ input {
     max-width: 100%;
 }
 
+input:invalid {
+    box-shadow: none;
+}/* Needed for preventing red border around input boxes for a1 and b1 input indicating invalid input*/
+
 .chart {
     height: 50vh;
 }
-]
