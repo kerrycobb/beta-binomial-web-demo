@@ -3,10 +3,16 @@ input {
     min-width: 100%;
     max-width: 100%;
 }
-
 input:invalid {
     box-shadow: none;
 }/* Needed for preventing red border around input boxes for a1 and b1 input indicating invalid input*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 
 .chart {
     height: 50vh;
