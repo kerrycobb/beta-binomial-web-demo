@@ -8,6 +8,9 @@ input {
     border-radius: 0.3rem;
     margin: 0px 5px 0px 0px;
 }
+input:invalid {
+    box-shadow: none;
+}
 label {
     display: flex;
     height:100%;
@@ -30,16 +33,6 @@ label {
     width:100%;
     margin: 0px 20px 0px 12px;
 }
-
-
-
-
-/*.chart, .info {
-    display:flex;
-    align-items: center;
-    background-color: rgb(220, 220, 220)
-}*/
-/*div, label {
-    background-color: gray;
-    border:1px solid black;
-}*/
+.chart {
+    height: 300px;
+}
