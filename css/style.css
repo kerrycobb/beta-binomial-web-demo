@@ -1,3 +1,4 @@
+* {font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;}
 :root {
     --body: rgb(255, 255, 255);
     --background: rgb(255, 255, 255);
@@ -6,9 +7,8 @@
     --shadowcolor: rgba(0,0,0,0.2);
     --color1: #c9d8c5;
     --color2: #a8b6bf;
-    --break: 764;
+    --break: 768;
 }
-
 
 
 /* Page layout */
@@ -70,7 +70,9 @@ header, .box {
     background: var(--background)
 }
 
-
+.head-row label {
+    text-align: center;
+}
 
 /* Input and Slider Style */
 input {
@@ -82,7 +84,7 @@ input:invalid {
     box-shadow: none;
 }
 .slider {
-    margin: 0px 16px;
+    margin: 0px 22px 0px 16px;
 }
 
 
@@ -98,7 +100,7 @@ input:invalid {
 
 
 /* Media Queries */
-@media screen and (min-width: 764px) {
+@media only screen and (min-width: 768px) {
     .section {
         height: none;
     }
@@ -123,8 +125,12 @@ input:invalid {
     }
     .head-row {
         display:grid;
-        grid-template-columns: 85px auto;
+        grid-template-columns: 100px auto;
     }
+    .head-row label {
+        text-align: right;
+    }
+
     .head-slide-box {
         display:grid;
     }
