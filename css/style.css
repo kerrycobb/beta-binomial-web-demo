@@ -11,6 +11,16 @@
 }
 
 
+/*
+.bar-chart {
+    background-color: #fde396;
+}
+.model-chart {
+    background-color: #fde396;
+}*/
+
+
+
 /* Page layout */
 body {
     margin: 0;
@@ -119,14 +129,6 @@ input:invalid {
 }
 .slider {
     margin: 0px 22px 0px 16px;
-}
-
-
-.bar-chart {
-    background-color: #fde396;
-}
-.model-chart {
-    background-color: #fde396;
 }
 
 
