@@ -100,7 +100,7 @@ input:invalid {
 
 
 /* Media Queries */
-/*@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
     .section {
         height: none;
     }
@@ -137,4 +137,4 @@ input:invalid {
     .bar-chart {
         height: 100%;
     }
-}*/
+}
