@@ -11,15 +11,6 @@
 }
 
 
-/*
-.bar-chart {
-    background-color: #fde396;
-}
-.model-chart {
-    background-color: #fde396;
-}*/
-
-
 
 /* Page layout */
 body {
@@ -52,10 +43,10 @@ header {
     display: grid;
     grid-row-gap: 12px;
     grid-auto-rows: 1fr min-content min-content;
+    height:60vh;
 }
-.marginal-box {
-    display: grid;
-    grid-auto-rows: 180px;
+.bar-chart {
+    height: 180px;
 }
 .beta-slide-box {
     display: grid;
@@ -74,7 +65,7 @@ header {
         grid-row: 1;
     }
     .box {
-        height:50vh;
+        height:60vh;
     }
     .model1-box: {
         grid-column: 1;
@@ -83,8 +74,6 @@ header {
     .marginal-box: {
         grid-column: 2;
         grid-row: 2;
-        grid-auto-rows: 1fr;
-        }
     }
     .model2-box: {
         grid-column: 3;
@@ -95,6 +84,9 @@ header {
     }
     .head-row label {
         text-align: right;
+    }
+    .bar-chart {
+        height: 100%;
     }
 }
 
