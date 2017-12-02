@@ -98,7 +98,7 @@ input:invalid {
 
 
 /* Media Queries */
-@media all and (min-width: 764px) {
+@media screen and (min-width: 764px) {
     .section {
         height: none;
     }
