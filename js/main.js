@@ -65,6 +65,12 @@ function plot(m){
                 [0.2*params-1, 0.4*params-1 , 0.6*params-1 , 0.8*params-1]
         },
     });
+    chart.reflowNow = function(){
+        this.containerHeight = this.options.chart.height ||    window.window.HighchartsAdapter.adapterRun(this.renderTo, 'height');
+        this.containerWidth = this.options.chart.width || window.window.HighchartsAdapter.adapterRun(this.renderTo, 'width');
+        this.setSize(this.containerWidth, this.containerHeight, false);
+        this.hasUserSize = null;
+    };
     m.chart = chart;
 }
 
@@ -208,11 +214,12 @@ function WidthChange(mq) {
   }
 }
 
-// $(window).resize(function() {
+$(window).resize(function() {
+
 //     height = $('#chart1').height();
 //     width = $('#chart1').width();
 //     $("#chart1").highcharts().setSize(width, height, doAnimation = false);
 //     height = $('#chart2').height();
 //     width = $('#chart2').width();
 //     $("#chart2").highcharts().setSize(width, height, doAnimation = false);
-// });
+});
