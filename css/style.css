@@ -11,16 +11,16 @@
 }
 
 
-
 /* Page layout */
 body {
     margin: 0;
-    padding: 0 5px;
+    padding: 5px;
 }
 section {
     display: grid;
     height: 100vh;
     align-items: center;
+    grid-gap: 8px;
 }
 .section-wrap {
     display: grid;
@@ -31,21 +31,61 @@ header {
     grid-row-gap: 12px;
 }
 .head-row {
-    display:grid;
+    display: grid;
     grid-row-gap: 7px
 }
 .head-slide-box {
-    display:grid;
+    display: grid;
     grid-template-columns: auto 55px;
 }
 .model-box {
-    display:grid;
+    display: grid;
     grid-row-gap: 12px;
-    grid-auto-rows: 50vh min-content min-content;
+    grid-auto-rows: 1fr min-content min-content;
+}
+.marginal-box {
+    display: grid;
+    grid-auto-rows: 180px;
 }
 .beta-slide-box {
-    display:grid;
+    display: grid;
     grid-template-columns: 15px auto 55px;
+}
+
+
+
+/* Media Queries */
+@media only screen and (min-width: 768px) {
+    .section-wrap {
+        grid-template-columns: 1fr 180px 1fr;
+    }
+    header {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+    }
+    .box {
+        height:50vh;
+    }
+    .model1-box: {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .marginal-box: {
+        grid-column: 2;
+        grid-row: 2;
+        grid-auto-rows: 1fr;
+        }
+    }
+    .model2-box: {
+        grid-column: 3;
+        grid-row: 2;
+    }
+    .head-row {
+        grid-template-columns: 100px auto;
+    }
+    .head-row label {
+        text-align: right;
+    }
 }
 
 
@@ -60,10 +100,11 @@ header, .box {
     box-shadow: 0 4px 8px 0 var(--shadowcolor);
     padding: 10px;
 }
-.model1-box { background-color: var(--color1); }
-.model2-box { background-color: var(--color2); }
-.bar-chart {
-    height: 140px;
+.model1-box {
+    background-color: var(--color1);
+}
+.model2-box {
+    background-color: var(--color2);
 }
 .head-row label {
     text-align: center;
@@ -81,6 +122,14 @@ input:invalid {
 }
 
 
+.bar-chart {
+    background-color: #fde396;
+}
+.model-chart {
+    background-color: #fde396;
+}
+
+
 
 /* noUI Slider Style */
 .noUi-target {
@@ -88,46 +137,4 @@ input:invalid {
 }
 .noUi-connect {
 	background: var(--darkgray);
-}
-
-
-
-/* Media Queries */
-@media only screen and (min-width: 768px) {
-    .section {
-        height: none;
-    }
-    .section-wrap {
-        grid-template-columns:  1fr 180px 1fr;
-    }
-    header {
-        grid-column: 1 / span 3;
-        grid-row: 1;
-    }
-    .model1-box: {
-        grid-column:1;
-        grid-row: 2;
-    }
-    .marginal-box: {
-        grid-column: 2;
-        grid-row: 2;
-    }
-    .model2-box: {
-        grid-column: 3;
-        grid-row: 2;
-    }
-    .head-row {
-        display:grid;
-        grid-template-columns: 100px auto;
-    }
-    .head-row label {
-        text-align: right;
-    }
-
-    .head-slide-box {
-        display:grid;
-    }
-    .bar-chart {
-        height: 100%;
-    }
 }

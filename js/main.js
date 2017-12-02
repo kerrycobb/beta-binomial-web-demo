@@ -23,13 +23,18 @@ function update(slider, value) {
     }
 }
 
-function plot(m){
+function plot(m, anim){
     var params = m.params;
     var chart = Highcharts.chart(m.id, {
         chart: { type: 'line' },
         title: { text: `${m.name}`},
         credits: { enabled: false },
         yAxis: { title: { text: 'Density' } },
+        plotOptions: {
+            series: {
+                animation: anim
+            }
+        },
         tooltip: {
             formatter: function() {
                 return '<br> θ: <b>' + this.x + '</b><br> Density: <b>' + this.y + '<b><br>';
@@ -76,12 +81,17 @@ function inverted(mq){
     }
 }
 
-function barchart(m1, m2, mq){
-    var barchart = new Highcharts.chart('barchart', {
+function barchart(id, m1, m2, mq, anim){
+    var barchart = new Highcharts.chart(id, {
         chart: { type: 'column', inverted: inverted(mq)},
         title: { text: 'Marginal Likelihoods' },
         legend: { enabled: false },
         credits: { enabled: false },
+        plotOptions: {
+            series: {
+                animation: anim
+            }
+        },
         xAxis: {
             type: 'category',
             tickLength: 0
@@ -129,9 +139,9 @@ m1.name = 'Model 1';
 m2.name = 'Model 2';
 m1.color = color1;
 m2.color = color2;
-plot(m1);
-plot(m2);
-var barchart = barchart(m1, m2, mq);
+plot(m1, true);
+plot(m2, true);
+var barchart = barchart('barchart', m1, m2, mq, true);
 
 var sliders = [
     {
@@ -208,6 +218,8 @@ function WidthChange(mq) {
   }
 }
 
-// $(window).resize(function() {
-//
-// });
+$(window).resize(function() {
+    plot(m1, false);
+    plot(m2, false);
+    barchart('barchart', m1, m2, mq, false);
+});
