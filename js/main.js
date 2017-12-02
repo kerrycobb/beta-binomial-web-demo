@@ -152,16 +152,16 @@ var sliders = [
         range:{'min':[0, 0.01], 'max':[1]}, models:[m1, m2]},
     {
         id:'a1-slider', param:'a', start:a1,
-        range:{'min':[0.01, 0.01], '10%':[1, 1], 'max':[100]}, models:[m1]},
+        range:{'min':[0.01, 0.01], '20%':[1, 1], 'max':[100]}, models:[m1]},
     {
         id:'b1-slider', param:'b', start:b1,
-        range:{'min':[0.01, 0.01], '10%':[1, 1], 'max':[100]}, models:[m1]},
+        range:{'min':[0.01, 0.01], '20%':[1, 1], 'max':[100]}, models:[m1]},
     {
         id:'a2-slider', param:'a', start:a2,
-        range:{'min':[0.01, 0.01], '10%':[1, 1], 'max':[100]}, models:[m2]},
+        range:{'min':[0.01, 0.01], '20%':[1, 1], 'max':[100]}, models:[m2]},
     {
         id:'b2-slider', param:'b', start:b2,
-        range:{'min':[0.01, 0.01], '10%':[1, 1], 'max':[100]}, models:[m2]},
+        range:{'min':[0.01, 0.01], '20%':[1, 1], 'max':[100]}, models:[m2]},
 ];
 
 // Sliders and Inputs
