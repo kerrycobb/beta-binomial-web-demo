@@ -6,95 +6,85 @@
   <title>Marginal Likelihood Demo</title>
 
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.css'>
-
   <link rel='stylesheet' href='css/style.css'>
-
 </head>
-
 <body>
-
-<section class='demo-section'>
-<div class='section-wrap'>
-
-    <!-- Header Section Sliders -->
-    <header>
-      <!-- Sample Size -->
-      <div class='head-row'>
-        <label>Sample Size</label>
-        <div class='head-slide-box'>
-          <div class='slider' id='n-slider' for='n-input'></div>
-          <input id='n-input' type='number'></input>
+  <section class='demo-section'>
+    <div class='section-wrap'>
+      <!-- Header Section Sliders -->
+      <header>
+        <!-- Sample Size -->
+        <div class='head-row'>
+          <label>Sample Size</label>
+          <div class='head-slide-box'>
+            <div class='slider' id='n-slider' for='n-input'></div>
+            <input id='n-input' type='number'></input>
+          </div>
+        </div>
+        <!-- Proportion -->
+        <div class='head-row'>
+          <label>Proportion</label>
+          <div class='head-slide-box'>
+            <div class='slider' id='p-slider' for='p-input'></div>
+            <input id='p-input' type='number'></input>
+          </div>
+        </div>
+      </header>
+      <!-- Model 1 Box -->
+      <div class='box model-box model1-box'>
+        <!-- Model 1 Chart -->
+        <div class='chart-wrap'>
+          <div class='model-chart' id='chart1'></div>
+        </div>
+        <!-- A1 Slider -->
+        <div class='beta-slide-box'>
+          <label>&alpha;</label>
+          <div class='slider' id='a1-slider' for='a1-input'></div>
+          <input id='a1-input' type='number'></input>
+        </div>
+        <!-- B1 Slider -->
+        <div class='beta-slide-box'>
+          <label>&beta;</label>
+          <div class='slider' id='b1-slider' for='b1-input'></div>
+          <input id='b1-input' type='number'></input>
         </div>
       </div>
-      <!-- Proportion -->
-      <div class='head-row'>
-        <label>Proportion</label>
-        <div class='head-slide-box'>
-          <div class='slider' id='p-slider' for='p-input'></div>
-          <input id='p-input' type='number'></input>
+      <!-- Marginal Box -->
+      <div class='box marginal-box'>
+        <!-- Marginal Barchart -->
+        <div class='bar-chart' id='barchart'></div>
+      </div>
+      <!-- Model 2 Box -->
+      <div class='box model-box model2-box'>
+        <!-- Model 1 Chart -->
+        <div class='chart-wrap'>
+          <div class='model-chart' id='chart2'></div>
+        </div>
+        <!-- A1 Slider -->
+        <div class='beta-slide-box'>
+          <label>&alpha;</label>
+          <div class='slider' id='a2-slider' for='a2-input'></div>
+          <input id='a2-input' type='number'></input>
+        </div>
+        <!-- B1 Slider -->
+        <div class='beta-slide-box'>
+          <label>&beta;</label>
+          <div class='slider' id='b2-slider' for='b2-input'></div>
+          <input id='b2-input' type='number'></input>
         </div>
       </div>
-    </header>
-
-    <!-- Model 1 Box -->
-    <div class='box model-box model1-box'>
-      <!-- Model 1 Chart -->
-      <div class='chart-wrap'>
-        <div class='model-chart' id='chart1'></div>
-      </div>
-      <!-- A1 Slider -->
-      <div class='beta-slide-box'>
-        <label>&alpha;</label>
-        <div class='slider' id='a1-slider' for='a1-input'></div>
-        <input id='a1-input' type='number'></input>
-      </div>
-      <!-- B1 Slider -->
-      <div class='beta-slide-box'>
-        <label>&beta;</label>
-        <div class='slider' id='b1-slider' for='b1-input'></div>
-        <input id='b1-input' type='number'></input>
-      </div>
     </div>
-
-    <!-- Marginal Box -->
-    <div class='box marginal-box'>
-      <!-- Marginal Barchart -->
-      <div class='bar-chart' id='barchart'></div>
-    </div>
-
-    <!-- Model 2 Box -->
-    <div class='box model-box model2-box'>
-      <!-- Model 1 Chart -->
-      <div class='chart-wrap'>
-        <div class='model-chart' id='chart2'></div>
-      </div>
-      <!-- A1 Slider -->
-      <div class='beta-slide-box'>
-        <label>&alpha;</label>
-        <div class='slider' id='a2-slider' for='a2-input'></div>
-        <input id='a2-input' type='number'></input>
-      </div>
-      <!-- B1 Slider -->
-      <div class='beta-slide-box'>
-        <label>&beta;</label>
-        <div class='slider' id='b2-slider' for='b2-input'></div>
-        <input id='b2-input' type='number'></input>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script
-  src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
-  integrity='sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g='
-  crossorigin='anonymous'>
-</script>
-<script
-  src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.js'>
-</script>
-<script src='https://code.highcharts.com/highcharts.js'></script>
-<script src='js/jstat.js'></script>
-<script src='js/beta_binomial.js'></script>
-<script src='js/main.js'></script>
-
+  </section>
+  <script
+    src='https://code.jquery.com/jquery-3.2.1.slim.min.js'
+    integrity='sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g='
+    crossorigin='anonymous'>
+  </script>
+  <script
+    src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.js'>
+  </script>
+  <script src='https://code.highcharts.com/highcharts.js'></script>
+  <script src='js/jstat.js'></script>
+  <script src='js/beta_binomial.js'></script>
+  <script src='js/main.js'></script>
 </body>

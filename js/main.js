@@ -208,12 +208,6 @@ function WidthChange(mq) {
   }
 }
 
-$(window).resize(function() {
-
-//     height = $('#chart1').height();
-//     width = $('#chart1').width();
-//     $("#chart1").highcharts().setSize(width, height, doAnimation = false);
-//     height = $('#chart2').height();
-//     width = $('#chart2').width();
-//     $("#chart2").highcharts().setSize(width, height, doAnimation = false);
-});
+// $(window).resize(function() {
+//
+// });
