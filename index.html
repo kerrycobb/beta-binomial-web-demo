@@ -1,108 +1,97 @@
-<!doctype html>
-<html lang='en'>
+<!DOCTYPE html>
+<html lang='en' >
 <head>
-  <title>Beta Binomial Web Demo</title>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb' crossorigin='anonymous'>
+  <meta charset='UTF-8'>
+
+  <title>Marginal Likelihood Demo</title>
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.css'>
+
   <link rel='stylesheet' href='css/style.css'>
+
 </head>
 
 <body>
-<div class='container-fluid'>
-  <section class='row' id='info'>
-    <div class='col info'>
-      <div></div>
-    </div>
-  </section>
-  <section class='row' id='demo'>
-    <div class='col'>
-      <form class='row'>
-        <div class='col-md-2'>
-          <label>Sample Size</label>
-        </div>
-        <div class='col slide-cont'>
-          <div class='slider-div' id='n-slider' for='n-input'></div>
+
+<section class='demo-section'>
+<div class='section-wrap'>
+
+    <!-- Header Section Sliders -->
+    <header>
+      <!-- Sample Size -->
+      <div class='head-row'>
+        <label>Sample Size</label>
+        <div class='head-slide-box'>
+          <div class='slider' id='n-slider' for='n-input'></div>
           <input id='n-input' type='number'></input>
         </div>
-      </form>
-      <form class='row'>
-        <div class='col-md-2'>
-          <label>Proportion</label>
-        </div>
-        <div class='col slide-cont'>
-          <div class='slider-div' id='p-slider' for='p-input'></div>
+      </div>
+      <!-- Proportion -->
+      <div class='head-row'>
+        <label>Proportion</label>
+        <div class='head-slide-box'>
+          <div class='slider' id='p-slider' for='p-input'></div>
           <input id='p-input' type='number'></input>
         </div>
-      </form>
-      <div class='row'>
-        <div class='col-md-5'>
-          <div class='row'>
-            <div class='col'>
-              <canvas class='chart' id='chart1'></canvas>
-            </div>
-          </div>
-          <form class='row'>
-            <div>
-              <label class='beta-label'>&alpha;</label>
-            </div>
-            <div class='col slide-cont'>
-              <div class='slider-div' id='a1-slider' for='a1-input'></div>
-              <input id='a1-input' type='number'></input>
-            </div>
-          </form>
-          <form class='row'>
-            <div>
-              <label class='beta-label'>&beta;</label>
-            </div>
-            <div class='col slide-cont'>
-              <div class='slider-div' id='b1-slider' for='b1-input'></div>
-              <input id='b1-input' type='number'></input>
-            </div>
-          </form>
-        </div>
-        <div class='col-md-2'>
-            <canvas class='col' id='barchart'></canvas>
-        </div>
-        <div class='col-md-5'>
-          <div class='row'>
-            <div class='col'>
-              <canvas class='chart' id='chart2'></canvas>
-            </div>
-          </div>
-          <form class='row'>
-            <div>
-              <label class='beta-label'>&alpha;</label>
-            </div>
-            <div class='col slide-cont'>
-              <div class='slider-div' id='a2-slider' for='a2-input'></div>
-              <input id='a2-input' type='number'></input>
-            </div>
-          </form>
-          <form class='row'>
-            <div>
-              <label class='beta-label'>&beta;</label>
-            </div>
-            <div class='col slide-cont'>
-              <div class='slider-div' id='b2-slider' for='b2-input'></div>
-              <input id='b2-input' type='number'></input>
-            </div>
-          </form>
-        </div>
+      </div>
+    </header>
+
+    <!-- Model 1 Box -->
+    <div class='box model-box model1-box'>
+      <!-- Model 1 Chart -->
+      <div class='model-chart' id='chart1'></div>
+      <!-- A1 Slider -->
+      <div class='beta-slide-box'>
+        <label>&alpha;</label>
+        <div class='slider' id='a1-slider' for='a1-input'></div>
+        <input id='a1-input' type='number'></input>
+      </div>
+      <!-- B1 Slider -->
+      <div class='beta-slide-box'>
+        <label>&beta;</label>
+        <div class='slider' id='b1-slider' for='b1-input'></div>
+        <input id='b1-input' type='number'></input>
       </div>
     </div>
-  </section>
-</div>
-<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js' integrity='sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh' crossorigin='anonymous'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js' integrity='sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ' crossorigin='anonymous'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.js'></script>
 
+    <!-- Marginal Box -->
+    <div class='box marginal-box'>
+      <!-- Marginal Barchart -->
+      <div class='bar-chart' id='barchart'></div>
+    </div>
+
+    <!-- Model 2 Box -->
+    <div class='box model-box model2-box'>
+      <!-- Model 1 Chart -->
+      <div class='model-chart' id='chart2'></div>
+      <!-- A1 Slider -->
+      <div class='beta-slide-box'>
+        <label>&alpha;</label>
+        <div class='slider' id='a2-slider' for='a2-input'></div>
+        <input id='a2-input' type='number'></input>
+      </div>
+      <!-- B1 Slider -->
+      <div class='beta-slide-box'>
+        <label>&beta;</label>
+        <div class='slider' id='b2-slider' for='b2-input'></div>
+        <input id='b2-input' type='number'></input>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous">
+</script>
+<script
+  src='https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.js'>
+</script>
+<script src='https://code.highcharts.com/highcharts.js'></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src='js/jstat.js'></script>
 <script src='js/beta_binomial.js'></script>
-<script src='js/web_demo.js'></script>
+<script src='js/main.js'></script>
 
 </body>
-</html>

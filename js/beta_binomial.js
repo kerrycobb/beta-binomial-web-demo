@@ -1,17 +1,17 @@
 var BetaBinomial;
 
 BetaBinomial = (function() {
-    function BetaBinomial(a, b, n, p) {
-        var i;
+    function BetaBinomial(a, b, n, p, params) {
         this.a = a;
         this.b = b;
         this.n = n;
         this.p = p;
+        this.params = params;
         this.x = (function() {
-            var j, results;
+            var i, j, results;
             results = [];
-            for (i = j = 0; j <= 500; i = ++j) {
-                results.push(i / 500);
+            for (i = j = 1; j < params; i = ++j) {
+                results.push(i / params);
             }
             return results;
         })();
@@ -61,35 +61,6 @@ BetaBinomial = (function() {
         this.prior = Math.log(jStat.beta.pdf(this.p, this.a, this.b));
         this.post = Math.log(jStat.beta.pdf(this.p, this.post_a, this.post_b));
         this.marginal = Math.exp(this.like + this.prior - this.post);
-        return this.maginal;
-    };
-
-    BetaBinomial.prototype.get_datasets = function() {
-        var datasets = [
-            {
-                data: this.post_df,
-                label: 'Posterior p(θ|D)',
-                borderColor: '#fdc086',
-                fill: false
-            },
-            {
-                data: this.prior_df,
-                label: 'Prior p(D|θ)',
-                borderColor: '#beaed4',
-                fill: false
-            },
-            {
-                data: this.like_df,
-                label: 'Likelihood p(θ)',
-                borderColor: '#7fc97f',
-                fill: false
-            }
-        ];
-        return datasets;
-    };
-
-    BetaBinomial.prototype.update_param = function() {
-
     };
 
     return BetaBinomial;
