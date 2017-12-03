@@ -229,4 +229,4 @@ $(window).resize(function() {
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'UA-109690124-1');
+gtag('config', 'UA-110592523-1');
