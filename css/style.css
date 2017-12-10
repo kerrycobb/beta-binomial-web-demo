@@ -43,7 +43,7 @@ header {
 .model-box {
     display: grid;
     grid-row-gap: 12px;
-    grid-auto-rows: 1fr min-content min-content;
+    grid-template-rows: 1fr min-content min-content;
     height:60vh;
 }
 .bar-chart {
