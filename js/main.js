@@ -203,6 +203,7 @@ for (var i = 0; i < sliders.length; i++) {
     });
 }
 
+
 // Flip barchart on small screen
 // media query event handler
 if (matchMedia) {
@@ -218,15 +219,9 @@ function WidthChange(mq) {
   }
 }
 
+
 // Window Resize
 $(window).resize(function() {
     plot(m1, false);
     plot(m2, false);
-    // barchart('barchart', m1, m2, mq, false);
 });
-
-// Google Analytics
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-110592523-1');
