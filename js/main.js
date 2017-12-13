@@ -1,8 +1,8 @@
 /*jshint esnext: true */
 /*jshint loopfunc:true */
 
-var color1 = getComputedStyle(document.body).getPropertyValue('--color1');
-var color2 = getComputedStyle(document.body).getPropertyValue('--color2');
+var model1 = getComputedStyle(document.body).getPropertyValue('--model1');
+var model2 = getComputedStyle(document.body).getPropertyValue('--model2');
 var breakpoint = getComputedStyle(document.body).getPropertyValue('--break');
 const mq = window.matchMedia( `(min-width: ${breakpoint}px)` );
 
@@ -137,8 +137,8 @@ m1.id = 'chart1';
 m2.id = 'chart2';
 m1.name = 'Model 1';
 m2.name = 'Model 2';
-m1.color = color1;
-m2.color = color2;
+m1.color = model1;
+m2.color = model2;
 plot(m1, true);
 plot(m2, true);
 var barchart = barchart('barchart', m1, m2, mq, true);

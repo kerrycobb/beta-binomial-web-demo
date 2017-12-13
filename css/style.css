@@ -1,13 +1,17 @@
 * {font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;}
 :root {
-    --body: rgb(255, 255, 255);
-    --background: rgb(255, 255, 255);
-    --gray: rgb(210, 210, 210);
-    --darkgray: rgb(100, 100, 100);
+    --demo-section: rgb(240, 240, 240);
+    --top-bar: rgb(210, 210, 210);
+    --slider-connect: rgb(150, 150, 150);
+    --model1: #c9d8c5;
+    --model2: #a8b6bf;
+
     --shadowcolor: rgba(0,0,0,0.2);
-    --color1: #c9d8c5;
-    --color2: #a8b6bf;
     --break: 768;
+}
+
+#demo-section {
+    background-color: var(--demo-section);
 }
 
 
@@ -15,13 +19,14 @@
 /* Page layout */
 body {
     margin: 0;
-    padding: 5px;
+    padding: 0;
 }
 section {
 display: grid;
 grid-template-columns: 100%;
 height: 100vh;
 align-items: center;
+padding: 5px;
 }
 .section-wrap {
     display: grid;
@@ -94,20 +99,17 @@ header {
 
 
 /* Page element styles */
-body {
-    background: var(--body);
-}
 header, .box {
-    background: var(--gray);
+    background: var(--top-bar);
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 var(--shadowcolor);
     padding: 10px;
 }
 .model1-box {
-    background-color: var(--color1);
+    background-color: var(--model1);
 }
 .model2-box {
-    background-color: var(--color2);
+    background-color: var(--model2);
 }
 .head-row label {
     text-align: center;
@@ -131,5 +133,5 @@ input:invalid {
     border: none;
 }
 .noUi-connect {
-	background: var(--darkgray);
+	background: var(--slider-connect);
 }
