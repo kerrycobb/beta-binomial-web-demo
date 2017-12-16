@@ -65,13 +65,16 @@ header {
 @media only screen and (min-width: 768px) {
     .section-wrap {
         grid-template-columns: 1fr 180px 1fr;
+        grid-template-rows: auto minmax(60vh, 500px);
+        /* grid-template-rows: auto 60vh; */
     }
     header {
         grid-column: 1 / span 3;
         grid-row: 1;
     }
     .box {
-        height:60vh;
+        /* height:60vh; */
+        height:100%;
     }
     .model1-box: {
         grid-column: 1;
