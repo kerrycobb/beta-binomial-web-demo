@@ -146,7 +146,7 @@ var barchart = barchart('barchart', m1, m2, mq, true);
 var sliders = [
     {
         id:'n-slider' , param:'n', start:n,
-        range:{'min':[0, 1], 'max':[1000]},models:[m1, m2]},
+        range:{'min':[0, 1], 'max':[100000]},models:[m1, m2]},
     {
         id:'p-slider' , param:'p', start:p,
         range:{'min':[0, 0.01], 'max':[1]}, models:[m1, m2]},
